@@ -1,0 +1,444 @@
+[
+  {
+    "id": 1,
+    "Sex": "Man",
+    "category": "Polo",
+    "name": "Slim-fit Mesh Polo Shirt",
+    "filename": "Slim-fit_Mesh_Polo_Shirt.jpg",
+    "size": [
+      "X",
+      "M"
+    ],
+    "price": 85,
+    "image": "./assets/men clothes/polos/Slim-fit Mesh Polo Shirt.webp",
+    "color": "Red"
+  },
+  {
+    "id": 2,
+    "Sex": "Man",
+    "category": "Polo",
+    "name": "Classic Pique Polo Shirt",
+    "filename": "Classic_Pique_Polo_Shirt.jpg",
+    "size": [
+      "M",
+      "L",
+      "XL"
+    ],
+    "price": 90,
+    "image": "./assets/men clothes/polos/Classic Pique Polo Shirt.jpg",
+    "color": "Black"
+  },
+  {
+    "id": 3,
+    "Sex": "Man",
+    "category": "Polo",
+    "name": "Striped Polo Shirt",
+    "filename": "Striped_Polo_Shirt.jpg",
+    "size": [
+      "L",
+      "XL"
+    ],
+    "price": 75,
+    "image": "./assets/men clothes/polos/Striped Polo Shirt.jpg",
+    "color": "Green"
+  },
+  {
+    "id": 4,
+    "Sex": "Man",
+    "category": "Polo",
+    "name": "Dri-FIT Polo Shirt",
+    "filename": "Dri-FIT_Polo_Shirt.jpg",
+    "size": [
+      "X",
+      "M",
+      "L",
+      "XL"
+    ],
+    "price": 65,
+    "image": "./assets/men clothes/polos/Dri-FIT Polo Shirt.jpg",
+    "color": "Green"
+  },
+  {
+    "id": 5,
+    "Sex": "Man",
+    "category": "Polo",
+    "name": "Performance Polo",
+    "filename": "Performance_Polo.jpg",
+    "size": [
+      "XL"
+    ],
+    "price": 70,
+    "image": "./assets/men clothes/polos/Performance Polo.jpg",
+    "color": "Blue"
+  },
+  {
+    "id": 6,
+    "Sex": "Man",
+    "category": "Trousers",
+    "name": "Polywool Short Trousers",
+    "filename": "Polywool_Short_Trousers.jpg",
+    "size": 32,
+    "price": 60,
+    "image": "./assets/men clothes/trousers/Polywool Short Trousers.jpg",
+    "color": "Green"
+  },
+  {
+    "id": 7,
+    "Sex": "Man",
+    "category": "Trousers",
+    "name": "Redhawk Action Trousers",
+    "filename": "Redhawk_Action_Trousers.jpg",
+    "size": 34,
+    "price": 55,
+    "image": "./assets/men clothes/trousers/Redhawk Action Trousers.jpg",
+    "color": "Red"
+  },
+  {
+    "id": 8,
+    "Sex": "Man",
+    "category": "Trousers",
+    "name": "501 Original Fit Jeans",
+    "filename": "501_Original_Fit_Jeans.jpg",
+    "size": 36,
+    "price": 70,
+    "image": "./assets/men clothes/trousers/501 Original Fit Jeans.jpg",
+    "color": "Red"
+  },
+  {
+    "id": 9,
+    "Sex": "Man",
+    "category": "Trousers",
+    "name": "Slim Fit Khaki Pants",
+    "filename": "Slim_Fit_Khaki_Pants.jpg",
+    "size": 32,
+    "price": 65,
+    "image": "./assets/men clothes/trousers/Slim Fit Khaki Pants.jpg",
+    "color": "Blue"
+  },
+  {
+    "id": 10,
+    "Sex": "Man",
+    "category": "Trousers",
+    "name": "Chino Trousers",
+    "filename": "Chino_Trousers.jpg",
+    "size": 34,
+    "price": 40,
+    "image": "./assets/men clothes/trousers/Chino Trousers.jpg",
+    "color": "Grey"
+  },
+  {
+    "id": 11,
+    "Sex": "Man",
+    "category": "Coat",
+    "name": "Wool Cashmere Melton Coat",
+    "filename": "Wool_Cashmere_Melton_Coat.jpg",
+    "size": "L",
+    "price": 250,
+    "image": "./assets/men clothes/coats/Wool Cashmere Melton Coat.jpg",
+    "color": "Green"
+  },
+  {
+    "id": 12,
+    "Sex": "Man",
+    "category": "Coat",
+    "name": "Boiled Wool Jacket",
+    "filename": "Boiled_Wool_Jacket.jpg",
+    "size": "M",
+    "price": 220,
+    "image": "./assets/men clothes/coats/Boiled Wool Jacket.jpg",
+    "color": "Green"
+  },
+  {
+    "id": 13,
+    "Sex": "Man",
+    "category": "Coat",
+    "name": "Classic Trench Coat",
+    "filename": "Classic_Trench_Coat.jpg",
+    "size": "XL",
+    "price": 300,
+    "image": "./assets/men clothes/coats/Classic Trench Coat.jpg",
+    "color": "Grey"
+  },
+  {
+    "id": 14,
+    "Sex": "Man",
+    "category": "Coat",
+    "name": "Leather Bomber Jacket",
+    "filename": "Leather_Bomber_Jacket.jpg",
+    "size": "L",
+    "price": 350,
+    "image": "./assets/men clothes/coats/Leather Bomber Jacket.jpg",
+    "color": "Blue"
+  },
+  {
+    "id": 15,
+    "Sex": "Man",
+    "category": "Coat",
+    "name": "Quilted Puffer Jacket",
+    "filename": "Quilted_Puffer_Jacket.jpg",
+    "size": "M",
+    "price": 180,
+    "image": "./assets/men clothes/coats/Quilted Puffer Jacket.jpg",
+    "color": "Grey"
+  },
+  {
+    "id": 16,
+    "Sex": "Shoe",
+    "category": "Polo",
+    "name": "Black Laced Faux Leather Shoes",
+    "filename": "Black_Laced_Faux_Leather_Shoes.jpg",
+    "size": 10,
+    "price": 75,
+    "image": "./assets/men clothes/Shoes/Black Laced Faux Leather Shoes.jpg",
+    "color": "Grey"
+  },
+  {
+    "id": 17,
+    "Sex": "Man",
+    "category": "Shoe",
+    "name": "Oxford Dress Shoes",
+    "filename": "Oxford_Dress_Shoes.jpg",
+    "size": 9,
+    "price": 120,
+    "image": "./assets/men clothes/Shoes/Oxford Dress Shoes.jpg",
+    "color": "Grey"
+  },
+  {
+    "id": 18,
+    "Sex": "Man",
+    "category": "Shoe",
+    "name": "Brown Leather Loafers",
+    "filename": "Brown_Leather_Loafers.jpg",
+    "size": 11,
+    "price": 110,
+    "image": "./assets/men clothes/Shoes/Brown Leather Loafers.jpg",
+    "color": "Green"
+  },
+  {
+    "id": 19,
+    "Sex": "Man",
+    "category": "Shoe",
+    "name": "Suede Desert Boots",
+    "filename": "Suede_Desert_Boots.jpg",
+    "size": 10,
+    "price": 95,
+    "image": "./assets/men clothes/Shoes/Suede Desert Boots.jpg",
+    "color": "Grey"
+  },
+  {
+    "id": 20,
+    "Sex": "Man",
+    "category": "Shoe",
+    "name": "White Canvas Sneakers",
+    "filename": "White_Canvas_Sneakers.jpg",
+    "size": 9,
+    "price": 60,
+    "image": "./assets/men clothes/Shoes/White Canvas Sneakers.jpg",
+    "color": "Black"
+  },
+  {
+    "id": 21,
+    "Sex": "Man",
+    "category": "Suit",
+    "name": "Slim Fit Charcoal Suit",
+    "filename": "Slim_Fit_Charcoal_Suit.jpg",
+    "size": "40R",
+    "price": 350,
+    "image": "./assets/men clothes/suits/Slim Fit Charcoal Suit.jpg",
+    "color": "Green"
+  },
+  {
+    "id": 22,
+    "Sex": "Man",
+    "category": "Suit",
+    "name": "Navy Blue Two-Piece Suit",
+    "filename": "Navy_Blue_Two-Piece_Suit.jpg",
+    "size": "42R",
+    "price": 400,
+    "image": "./assets/men clothes/suits/Navy Blue Two-Piece Suit.jpg",
+    "color": "Blue"
+  },
+  {
+    "id": 23,
+    "Sex": "Man",
+    "category": "Shoe",
+    "name": "Black Designer Formal Oxford Shoes",
+    "filename": "Black_Designer_Formal_Oxford_Shoes.jpg",
+    "size": "44R",
+    "price": 450,
+    "image": "./assets/men clothes/suits/01564300401-p.jpg",
+    "color": "Black"
+  },
+  {
+    "id": 24,
+    "Sex": "Man",
+    "category": "Suit",
+    "name": "Light Grey Linen Suit",
+    "filename": "Light_Grey_Linen_Suit.jpg",
+    "size": "38R",
+    "price": 320,
+    "image": "./assets/men clothes/suits/Light Grey Linen Suit.jpg",
+    "color": "Blue"
+  },
+  {
+    "id": 25,
+    "Sex": "Man",
+    "category": "Suit",
+    "name": "Double-Breasted Pinstripe Suit",
+    "filename": "Double-Breasted_Pinstripe_Suit.jpg",
+    "size": "42L",
+    "price": 500,
+    "image": "./assets/men clothes/suits/Double-Breasted Pinstripe Suit.jpg",
+    "color": "Grey"
+  },
+  {
+    "id": 26,
+    "Sex": "Woman",
+    "category": "T-shirt",
+    "name": "Hanes Women's Short-Sleeve V-Neck Graphic T-Shirt",
+    "size": "M",
+    "price": 15.99,
+    "image": "./assets/women clothes/t-shirts/th1.jpg",
+    "color": "Red"
+  },
+  {
+    "id": 27,
+    "Sex": "Woman",
+    "category": "T-shirt",
+    "name": "Hanes Women's Plus-Size Short-Sleeve V-Neck Graphic T-Shirt",
+    "size": "XXL",
+    "price": 17.99,
+    "image": "./assets/women clothes/t-shirts/th2.jpg",
+    "color": "Blue"
+  },
+  {
+    "id": 28,
+    "Sex": "Woman",
+    "category": "T-shirt",
+    "name": "Essential Basic Women's Cotton Blend V-Neck Tee",
+    "size": "L",
+    "price": 12.99,
+    "image": "./assets/women clothes/t-shirts/th3.jpg",
+    "color": "Green"
+  },
+  {
+    "id": 29,
+    "Sex": "Woman",
+    "category": "T-shirt",
+    "name": "TheMogan Women's Basic Crew Neck Short Sleeve Tee",
+    "size": "S",
+    "price": 14.99,
+    "image": "./assets/women clothes/t-shirts/th4.jpg",
+    "color": "Green"
+  },
+  {
+    "id": 30,
+    "Sex": "Woman",
+    "category": "T-shirt",
+    "name": "Hanes Women's Relaxed Fit V-Neck T-Shirt",
+    "size": "M",
+    "price": 13.99,
+    "image": "./assets/women clothes/t-shirts/th5.jpg",
+    "color": "Red"
+  },
+  {
+    "id": 31,
+    "Sex": "Woman",
+    "category": "Coat",
+    "name": "Hanes Women's Relaxed Fit Coat",
+    "size": "M",
+    "price": 125.99,
+    "image": "./assets/women clothes/coats/ct1.jpg",
+    "color": "Red"
+  },
+  {
+    "id": 32,
+    "Sex": "Woman",
+    "category": "Coat",
+    "name": "Hanes Women's  Coat",
+    "size": "XL",
+    "price": 225.99,
+    "image": "./assets/women clothes/coats/ct2.jpg",
+    "color": "Black"
+  },
+  {
+    "id": 33,
+    "Sex": "Woman",
+    "category": "Coat",
+    "name": "H-Fit Coat",
+    "size": "M",
+    "price": 299.99,
+    "image": "./assets/women clothes/coats/ct3.jpg",
+    "color": "Black"
+  },
+  {
+    "id": 34,
+    "Sex": "Woman",
+    "category": "Coat",
+    "name": " Coat",
+    "size": "S",
+    "price": 125.99,
+    "image": "./assets/women clothes/coats/ct4.jpg",
+    "color": "Grey"
+  },
+  {
+    "id": 35,
+    "Sex": "Woman",
+    "category": "Coat",
+    "name": "Burberry Coat",
+    "size": "L",
+    "price": 399.99,
+    "image": "./assets/women clothes/coats/ct5.jpg",
+    "color": "Grey"
+  },
+  {
+    "id": 36,
+    "Sex": "Woman",
+    "category": "Shoe",
+    "name": "Sky Runner",
+    "size": "M",
+    "price": 79.99,
+    "image": "./assets/women clothes/shoes/sh1.jpg",
+    "color": "Blue"
+  },
+  {
+    "id": 37,
+    "Sex": "Woman",
+    "category": "Shoe",
+    "name": "Midnight Sprint",
+    "size": "M",
+    "price": 125.99,
+    "image": "./assets/women clothes/shoes/sh2.jpg",
+    "color": "Black"
+  },
+  {
+    "id": 38,
+    "Sex": "Woman",
+    "category": "Shoe",
+    "name": "Cloud Tekker",
+    "size": "XL",
+    "price": 225.99,
+    "image": "./assets/women clothes/shoes/sh3.jpg",
+    "color": "Black"
+  },
+  {
+    "id": 39,
+    "Sex": "Woman",
+    "category": "Shoe",
+    "name": "Aqua glide",
+    "size": "S",
+    "price": 125.99,
+    "image": "./assets/women clothes/shoes/sh4.jpg",
+    "color": "Grey"
+  },
+  {
+    "id": 40,
+    "Sex": "Woman",
+    "category": "Shoe",
+    "name": "Mint Breeze",
+    "size": "L",
+    "price": 399.99,
+    "image": "./assets/women clothes/shoes/sh5.jpg",
+    "color": "Grey"
+  }
+]

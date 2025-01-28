@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+*{
+
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+#header {
+  height: 100vh;
+  background-color: black;
+}
+
+#body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#sidebar {
+  padding: 15px 0px 15px 0px;
+}
+
+#footer {
+  margin: 200px 0px 0px 0px;
+  height: 60vh;
+  background-color: black;
+}
+
+.carousel-item > * {
+  width: 200px;
+  height: 500px;
+}
+
+.pagination > li{
+  background-color:black;
+  
+}
+
+.pagination > li > .page-link {
+  background-color: black; /* Apply black background to the page-link elements */
+  color: white; /* Ensure the text color is visible */
+  border-color: black; /* Optional: Make borders black */
+}
+
+.pagination > li > .page-link:hover {
+  background-color: #333; /* Slightly lighter black on hover */
+  color: white; /* Maintain visible text color */
+}
+
+.card{
+  width:250px;
+  height:280px
+}
+
+.card img{
+  width:250px;
+  height:180px
+}
