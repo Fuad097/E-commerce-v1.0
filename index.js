@@ -1,5 +1,8 @@
 let allproducts = [];
+let currentPage = 1;
+const itemsPerPage = 15;
 let basketarray = [];
+let basketcounter = 0;
 const cardBody = document.getElementById("cardsbody");
 const filterbtn = document.getElementById("filterbtn");
 const filterbody = document.getElementById("filterbody");
@@ -9,15 +12,100 @@ const selectcolor = document.getElementById("colorselect");
 const selectSex = document.getElementById("Sex");
 const applyBtn = document.getElementById("Applybtn");
 const mapbody = document.getElementById("map");
+const pages = document.querySelector(".pagination");
+const pagelist = pages.querySelectorAll("li button");
+
+
+function showSpinner() {
+  const overlay = document.createElement("div");
+  overlay.id = "spinner-overlay";
+  overlay.style.position = "fixed";
+  overlay.style.top = 0;
+  overlay.style.left = 0;
+  overlay.style.width = "100vw";
+  overlay.style.height = "100vh";
+  overlay.style.display = "flex";
+  overlay.style.alignItems = "center";
+  overlay.style.justifyContent = "center";
+  overlay.style.zIndex = 2000;
+  /* A semi-transparent dark background to cover the page */
+  overlay.style.backgroundColor = "rgba(0,0,0,0.5)";
+
+  // Create the spinner element
+  const spinner = document.createElement("div");
+  spinner.style.width = "80px";
+  spinner.style.height = "80px";
+  spinner.style.border = "5px solid #f3f3f3";         // Light gray
+  spinner.style.borderTop = "5px solid black";      // Blue
+  spinner.style.borderRadius = "50%";
+  spinner.style.animation = "spin 1s linear infinite"; // Use the @keyframes spin
+  overlay.appendChild(spinner);
+
+  // Add it to the page
+  document.body.appendChild(overlay);
+}
+
+// spinner
+function delay(ms){
+  return new Promise((res)=>setTimeout(res,ms))
+}
+
+
+// Hide the spinner after we're done waiting
+function hideSpinner() {
+  const spinneroverlay = document.getElementById("spinner-overlay");
+  if (spinneroverlay) {
+    spinneroverlay.remove();
+  }
+}
 
 // Fetch products
+
 async function Products() {
+  showSpinner()
   const response = await fetch("./assets/data.json");
   const json = await response.json();
+  await delay(2000)
+  hideSpinner()
   allproducts = json;
-  renderProducts(allproducts);
+
+  renderProducts(getPaginatedProducts(currentPage));
 }
 Products();
+
+function getPaginatedProducts(page) {
+  const startIndex = (page - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+
+  return allproducts.slice(startIndex, endIndex);
+}
+
+pages.addEventListener("click", (e) => {
+  // Only run if a "button.page-link" is clicked
+  if (e.target.matches("button.page-link")) {
+    const pageValue = e.target.getAttribute("data-page");
+
+    if (pageValue === "Previous") {
+      // Go back one page, but not below 1
+      if (currentPage > 1) {
+        currentPage--;
+      }
+    } else if (pageValue === "Next") {
+      // Calculate total number of pages
+      const totalPages = Math.ceil(allproducts.length / itemsPerPage);
+      // Go forward one page, but not beyond totalPages
+      if (currentPage < totalPages) {
+        currentPage++;
+      }
+    } else {
+      // If it's a number, convert to integer
+      currentPage = parseInt(pageValue);
+    }
+
+    // After updating currentPage, render the slice for that page
+    renderProducts(getPaginatedProducts(currentPage));
+  }
+});
 
 // Filter function
 function Filter() {
@@ -42,15 +130,15 @@ function renderProducts(products) {
   cardBody.innerHTML = "";
   products.forEach((product) => {
     const div1 = document.createElement("div");
-    div1.classList.add("col-md-3");
+    div1.classList.add("col");
     div1.innerHTML = `
-     <div class="card m-2" style="cursor:pointer"  >
-     <img src="${product.image}"/>
+     <div class="card  m-2" style="cursor:pointer">
+     <img src="${product.image}" style="width:100%;height:300px"/>
      <div class="card-body p-2">
      <h5 class="card-title">${product.name}</h5>
      <div class="d-flex flex-column gap-3">
      <div class="d-flex justify-content-start gap-4">
-     <p class=""><span class="fw-semibold">Price:</span> ${product.price}</p>
+     <p class=""><span class="fw-semibold">Price:</span> $${product.price}</p>
      <p class=""><span class="fw-semibold">Size:</span> ${product.size}</p>
      </div>
      <div class="d-flex justify-content-between">
@@ -65,21 +153,21 @@ function renderProducts(products) {
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button
             <div id="modalbody" class="modal-body">
                 <div class="row">
-                <div class="col-md-5 ">
-                <img id="modalimage" src="${product.image}" style={width:"200px";height:"auto} />
+                <div class="col-md-5">
+                  <img id="modalimage" src="${product.image}" style="width:200px;height:auto" />
                 </div>
                 <div class="col-md-5  gap-3">
                     <h5 class="mb-5" id="modalname">${product.name}</h5>
                     <div class="d-flex gap-3">
                     <p id="modalsize">${product.size}</p>
                     <div class="d-flex  gap-3">
-                      <button class="btn btn-dark  btn-sm" style="width:"20px;height:10px">-</button>
-                      <input type="number" placeholder="0" style="width:40px;"/>
-                      <button class="btn btn-dark rounded-5 btn-sm">+</button>
+                      <button  class="btn btn-dark  btn-sm minusbtn" style="width:"20px;height:10px">-</button>
+                      <input  class="input" type="number" placeholder="0" style="width:40px;"/>
+                      <button  class="btn btn-dark rounded-5 btn-sm plusbtn">+</button>
                     </div>
                     </div>
                     <div class="d-flex gap-3">
-                    <p id="modalprice">${product.price}</p>
+                    <p id="modalprice">$${product.price}</p>
                     </div>
                     <div class="d-flex gap-3">
                     <p id="modalcolor">${product.color}</p>
@@ -97,6 +185,26 @@ function renderProducts(products) {
        `;
 
     cardBody.appendChild(div1);
+    let inputnum = div1.querySelector(".input");
+    const plus = div1.querySelector(".plusbtn");
+    const minus = div1.querySelector(".minusbtn");
+    plus.addEventListener("click", () => {
+      inputnum.value = parseInt(inputnum.value) || 0;
+      inputnum.value++;
+      basketcounter = parseInt(inputnum.value)
+    });
+
+    minus.addEventListener("click", () => {
+      inputnum.value = parseInt(inputnum.value) || 0;
+      if (inputnum.value > 0) {
+        inputnum.value--;
+      } else {
+        inputnum.classList.add("disabled");
+      }
+      basketcounter = parseInt(inputnum.value)
+    });
+    
+    
   });
 
   let countproduct = 0;
@@ -117,33 +225,38 @@ function renderProducts(products) {
       if (product) {
         // Push product to the basket
         countercrc.classList.remove("invisible");
-        basketarray.push(product);
-        countproduct++;
+        const productAlreadyInBasket = basketarray.some((item) => item.id === product.id);
+
+        if(!productAlreadyInBasket){
+          basketarray.push(product);
+        }
+        countproduct += parseInt(basketcounter);
         counterText.textContent = countproduct;
-        cartitems = basketarray.map((item)=>{
-          return `
-          <div class="cart-item d-flex align-items-center mt-4 px-3 py-2 border-bottom">
+        cartitems = basketarray
+          .map((item) => {
+            return `<div class="cart-item d-flex align-items-center mt-4 px-3 py-2 border-bottom">
                 <img src="${item.image}" alt="${item.name}" style="width: 100px; height: 100px; object-fit: cover; margin-right: 10px;">
                 <div class="flex-grow-1">
                   <div class="d-flex justify-content-between">
                   <h5 class="fs-6">${item.name}</h5>
-                  <i  class="fa fa-solid fa-xmark fs-4 bg-gray" style="cursor:pointer;"></i>
+                  <i class="fa fa-solid fa-xmark fs-4 bg-gray" style="cursor:pointer;"></i>
                   </div>
                   <p>Size: ${item.size}</p>
+                  <p>Quantity: ${countproduct}</p>
                   <div class="d-flex justify-content-between">
                   <p>Price: $${item.price}</p>
                   <button class="btn btn-dark px-4">Pay</button>
                   </div>
                 </div>
-              </div>`
-        }).join("")
-      } else {
-        return;
+              </div>`;
+          })
+          
       }
     }
 
-  
+   
   });
+ 
 
   const basket = document.getElementById("basketbtn");
 
@@ -172,7 +285,7 @@ function renderProducts(products) {
   
   <div class="d-flex justify-content-between px-3 my-2">
   <h5>Shopping list</h5>
-  <i  class="fa fa-solid fa-xmark fs-4" style="cursor:pointer;"></i>
+  <i  class="fa fa-solid fa-xmark  fs-4" style="cursor:pointer;"></i>
   </div>  
 
 
@@ -181,14 +294,41 @@ function renderProducts(products) {
   </div>
   </div>`;
 
-    document.body.appendChild(shoppingcart); // Add it to the DOM
+  
+  
+    
+    
+    let cartcontainer = shoppingcart.querySelector(".cart-items")
+    
+    cartcontainer.innerHTML = cartitems
+    cartcontainer.addEventListener("click",(e)=>{
+      e.preventDefault();
+      if(e.target.classList.contains("fa-xmark")){
+        const cartitem = e.target.closest(".cart-item")
+  
+        if(cartitem){
+          const itemName = cartitem.querySelector("h5").innerText;
+          cartitem.remove()
 
+          basketarray = basketarray.filter((p) => p.name !== itemName);
+          
+        
+          let newTotal = basketarray.reduce((acc, p) => acc + p.quantity, 0);
+          document.getElementById("counter-text").textContent = newTotal;
+        }
+      }
+    })
+    
     const icon = shoppingcart.querySelector(".fa-xmark");
     icon.addEventListener("click", () => {
       shoppingcart.classList.add("invisible");
       overlay.classList.add("invisible");
     });
+    document.body.appendChild(shoppingcart); // Add it to the DOM
   });
+
+
+ 
 }
 
 applyBtn.addEventListener("click", (e) => {

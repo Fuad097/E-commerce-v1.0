@@ -226,7 +226,7 @@
     <!-- Body -->
     <section id="body">
       <div class="container-fluid row mt-4">
-        <div id="filterbody" class="col-md-3">
+        <div id="filterbody" class="col-lg-3">
           <div class="d-flex flex-column">
             <div class="d-flex gap-3">
               <button
@@ -321,30 +321,26 @@
           </div>
         </div>
 
-        <div class="col-md-9">
-          <div id="cardsbody" class="row"></div>
+        <div class="col-lg-9">
+          <div id="cardsbody" class="row row-cols-1 row-cols-sm-2 row-cols-md-3"></div>
         </div>
       </div>
     </section>
 
     <nav id="pagination" class="mt-5 px-4" aria-label="Page navigation example">
-      <ul class="pagination justify-content-end">
-        <li class="page-item rounded-2">
-          <a class="page-link" href="#">Previous</a>
-        </li>
-        <li class="page-item"><a class="page-link" href="#">1</a></li>
-        <li class="page-item"><a class="page-link" href="#">2</a></li>
-        <li class="page-item"><a class="page-link" href="#">3</a></li>
-        <li class="page-item rounded-2">
-          <a class="page-link" href="#">Next</a>
-        </li>
+      <ul class="pagination justify-content-end" style="cursor: pointer;">
+        <li  class="page-item rounded-2"><button class="page-link" data-page="Previous">Previous</button></li>
+        <li  class="page-item"><button class="page-link" data-page="1" >1</button></li>
+        <li  class="page-item"><button class="page-link" data-page="2">2</button></li>
+        <li  class="page-item"><button class="page-link" data-page="3">3</button></li>
+        <li  class="page-item rounded-2"><button class="page-link" data-page="Next">Next</button></li>
       </ul>
     </nav>
 
     <!-- Footer -->
     <section id="footer">
-      <div class="container row justify-content-center">
-        <div class="col-lg-3 text-white mt-4 fs-4">Logo</div>
+      <div class="container row row-cols-2 justify-content-center">
+        <div id="logo" class="col-lg-3 text-white mt-4 fs-4">Logo</div>
         <div class="col-lg-3 mt-4 fs-4">
           <ul class="d-flex flex-column justify-content-between gap-4">
             <a class="text-white link-underline-dark" href="./pages/About.html"

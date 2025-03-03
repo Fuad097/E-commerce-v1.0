@@ -50,12 +50,45 @@
   color: white; /* Maintain visible text color */
 }
 
-.card{
-  width:250px;
-  height:280px
+.my-card {
+  width: 18rem; /* or 300px, etc. */
 }
 
-.card img{
-  width:250px;
-  height:180px
+.my-card img {
+  width: 100%;   /* makes the image fill the card width */
+  height: auto;  /* prevents distortion */
+  object-fit: cover; /* helpful if you ever want a fixed height and cropped image */
 }
+
+@media(max-width:1400px){
+  .card img {
+    width: 100%;
+    height: 40%;
+  }
+}
+
+
+@media(max-width:900px){
+  #logo{
+    display:none
+  }
+
+  #map{
+    display:none
+  }
+}
+
+#spinner{
+  animation: spin  5s  linear infinite
+}
+
+@keyframes spin{
+  0%{
+    transform:rotate(0deg)
+  }
+  100%{
+    transform:rotate(360deg)
+  }
+}
+
+
